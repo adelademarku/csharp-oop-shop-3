@@ -15,7 +15,7 @@ Console.WriteLine("Hello, World!");
 
 try
 {
-    Bevanda levissima = new Bevanda("Levissima", "Bormio", 18, 1500, true, 0.88, 22);
+    Bevanda levissima = new Bevanda("Levissima", "Bormio", -8, 1500, true, 0.88, 22);
     levissima.StampaProdotto();
 
     levissima.SvuotaMentreBevi(1600);
@@ -25,13 +25,64 @@ catch (PhNonEsiste e)
 {
     Console.WriteLine(e.Message);
 
-} catch (ArgumentException e) { Console.WriteLine(e.Message); 
-} catch (BevandaMassimoException e) { Console.WriteLine(e.Message); }
+}
+catch (ArgumentException e) 
+{ 
+    Console.WriteLine(e.Message); 
+} catch (BevandaMassimoException e)
+{
+    Console.WriteLine(e.Message); }
+
+
+
+try
+{
+    Bevanda levissima = new Bevanda("Levissima", "Bormio", 2, 1500, true, 0.88, 22);
+    levissima.StampaProdotto();
+
+    levissima.SvuotaMentreBevi(1600);
+    levissima.RiempiContenitoreDelAcqua(1800);
+}
+catch (PhNonEsiste e)
+{
+    Console.WriteLine(e.Message);
+
+}
+catch (ArgumentException e)
+{
+    Console.WriteLine(e.Message);
+}
+catch (BevandaMassimoException e)
+{
+    Console.WriteLine(e.Message);
+}
+
+try
+{
+    Bevanda levissima = new Bevanda("Levissima", "Bormio", 2, 1500, true, 0.88, 22);
+    levissima.StampaProdotto();
+
+    levissima.SvuotaMentreBevi(60);
+    levissima.RiempiContenitoreDelAcqua(7000);
+}
+catch (PhNonEsiste e)
+{
+    Console.WriteLine(e.Message);
+
+}
+catch (ArgumentException e)
+{
+    Console.WriteLine(e.Message);
+}
+catch (BevandaMassimoException e)
+{
+    Console.WriteLine(e.Message);
+}
 
 
 
 
-/*
+
 
 string[] frutta = { "mela", "pera", "banana" };
 
@@ -44,4 +95,4 @@ lavatrice.StampaProdotto();
 
 CiboInScattola tonno = new CiboInScattola("Tonno", 1.55, 10);
 
-tonno.StampaProdotto(); */
+tonno.StampaProdotto(); 

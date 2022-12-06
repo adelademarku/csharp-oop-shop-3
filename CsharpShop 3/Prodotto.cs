@@ -50,10 +50,7 @@ namespace CsharpShop_3
             return this.nome;
         }
 
-        public string GetDescrizione()
-        {
-            return this.descrizione;
-        }
+       
         public double GetPrezzo()
         {
             return this.prezzo;

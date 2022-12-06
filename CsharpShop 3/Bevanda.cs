@@ -9,19 +9,19 @@ namespace CsharpShop_3
     public class Bevanda : Prodotto
     {
 
-        private readonly double ph;
-        private readonly string sorgente;
-        private readonly int capacitaMassimalitri;
+        private double ph;
+        private string sorgente;
+        private int capacitaMassimalitri;
         private int contenutolitri;
-        private readonly bool naturale;
+        private bool naturale;
 
 
         public Bevanda(string nome, string sorgente, double ph, int capacitaMassimalitri, bool naturale, double prezzo, int iva) : base(nome, prezzo, iva)
         {
-           if (ph <0 && ph>14) {
+           if (ph < 0 || ph > 14) {
                 throw new PhNonEsiste("Ph inserito è al di fuore della scala consentita");
             }
-
+            this.contenutolitri = capacitaMassimalitri;
             this.sorgente = sorgente;
             this.ph = ph;
             this.capacitaMassimalitri = capacitaMassimalitri;
@@ -64,7 +64,7 @@ namespace CsharpShop_3
 
         public void SetPh()
         {
-            if (ph < 0 && ph >14)
+            if (ph < 0 || ph > 14)
             {
                 throw new PhNonEsiste("Ph inserito è al di fuore della scala consentita");
             }
@@ -93,7 +93,7 @@ namespace CsharpShop_3
         {
             if (contenutolitri + litri > capacitaMassimalitri)
             {
-                /*contenutolitri = capacitaMassimalitri;*/
+                contenutolitri = capacitaMassimalitri;
                 throw new BevandaMassimoException("attenzione la bottiglia è gia piena!");
             }
             else
@@ -108,9 +108,9 @@ namespace CsharpShop_3
 
         public int SvuotaMentreBevi(int litri)
         {
-            if (contenutolitri - litri > 0)
+            if (contenutolitri < litri )
             {
-                /*contenutolitri = 0;*/
+                contenutolitri = 0;
                 throw new ArgumentException("attenzione la bottiglia è gia vuota non puoi piu bere!");
             }
             else
@@ -135,7 +135,7 @@ namespace CsharpShop_3
             base.StampaProdotto();
             Console.WriteLine("Ph. :" + ph);
             Console.WriteLine("Sorgente :" + sorgente);
-            Console.WriteLine("Litri attuali :" + contenutolitri);
+            Console.WriteLine("Litri attuali :" + this.contenutolitri);
             Console.WriteLine("Litri  :" + capacitaMassimalitri);
             Console.WriteLine(GetTipo());
         }

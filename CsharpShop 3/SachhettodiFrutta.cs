@@ -50,8 +50,8 @@ namespace CsharpShop_3
         public override void StampaProdotto()
         {
             base.StampaProdotto();
-            Console.WriteLine("Contiene:" 
-                + StampaArrayStringhe);
+            Console.WriteLine("Contiene:");
+                StampaArrayStringhe(frutta);
             
         }
 
