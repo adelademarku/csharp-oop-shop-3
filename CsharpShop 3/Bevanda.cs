@@ -64,7 +64,7 @@ namespace CsharpShop_3
         {
             if (ph < 0 && ph >14)
             {
-                throw new ArgumentException("Ph inserito è al di fuore della scala consentita");
+                throw new PhNonEsiste("Ph inserito è al di fuore della scala consentita");
             }
         }
 
@@ -91,7 +91,8 @@ namespace CsharpShop_3
         {
             if (contenutolitri + litri > capacitaMassimalitri)
             {
-                contenutolitri = capacitaMassimalitri;
+                /*contenutolitri = capacitaMassimalitri;*/
+                throw new BevandaMassimoException("attenzione la bottiglia è gia piena!");
             }
             else
             {
@@ -107,7 +108,8 @@ namespace CsharpShop_3
         {
             if (contenutolitri - litri > 0)
             {
-                contenutolitri = 0;
+                /*contenutolitri = 0;*/
+                throw new ArgumentException("attenzione la bottiglia è gia vuota non puoi piu bere!");
             }
             else
             {
@@ -130,6 +132,7 @@ namespace CsharpShop_3
         {
             base.StampaProdotto();
             Console.WriteLine("Ph. :" + ph);
+            Console.WriteLine("Sorgente" + sorgente);
             Console.WriteLine("Litri attuali :" + contenutolitri);
             Console.WriteLine("Litri  :" + capacitaMassimalitri);
             Console.WriteLine(GetTipo());

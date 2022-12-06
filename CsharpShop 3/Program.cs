@@ -15,19 +15,23 @@ Console.WriteLine("Hello, World!");
 
 try
 {
-    Bevanda Levissima = new Bevanda("Levissima", "Bormio", -6, 1500, true, 0.88, 22);
-    Levissima.StampaProdotto();
+    Bevanda levissima = new Bevanda("Levissima", "Bormio", 18, 1500, true, 0.88, 22);
+    levissima.StampaProdotto();
+
+    levissima.SvuotaMentreBevi(1600);
+    levissima.RiempiContenitoreDelAcqua(1700);
 }
 catch (PhNonEsiste e)
 {
     Console.WriteLine(e.Message);
 
-}
+} catch (ArgumentException e) { Console.WriteLine(e.Message); 
+} catch (BevandaMassimoException e) { Console.WriteLine(e.Message); }
 
 
 
 
-
+/*
 
 string[] frutta = { "mela", "pera", "banana" };
 
@@ -40,4 +44,4 @@ lavatrice.StampaProdotto();
 
 CiboInScattola tonno = new CiboInScattola("Tonno", 1.55, 10);
 
-tonno.StampaProdotto();
+tonno.StampaProdotto(); */
