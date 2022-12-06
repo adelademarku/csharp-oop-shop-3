@@ -9,11 +9,13 @@ namespace CsharpShop_3
     public class Bevanda : Prodotto
     {
 
-        private double ph;
-        private string sorgente;
-        private int capacitaMassimalitri;
+        private readonly double ph;
+        private readonly string sorgente;
+        private readonly int capacitaMassimalitri;
         private int contenutolitri;
-        private bool naturale;
+        private readonly bool naturale;
+
+
         public Bevanda(string nome, string sorgente, double ph, int capacitaMassimalitri, bool naturale, double prezzo, int iva) : base(nome, prezzo, iva)
         {
            if (ph <0 && ph>14) {
@@ -132,7 +134,7 @@ namespace CsharpShop_3
         {
             base.StampaProdotto();
             Console.WriteLine("Ph. :" + ph);
-            Console.WriteLine("Sorgente" + sorgente);
+            Console.WriteLine("Sorgente :" + sorgente);
             Console.WriteLine("Litri attuali :" + contenutolitri);
             Console.WriteLine("Litri  :" + capacitaMassimalitri);
             Console.WriteLine(GetTipo());

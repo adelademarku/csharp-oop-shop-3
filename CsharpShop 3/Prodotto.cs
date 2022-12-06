@@ -13,9 +13,9 @@ namespace CsharpShop_3
 
         private int codice;
         private string nome;
-        private string descrizione;
         private double prezzo;
         private int iva;
+        /*private string descrizione;*/
 
 
         //Stato
@@ -28,15 +28,15 @@ namespace CsharpShop_3
             this.prezzo = prezzo;
             this.iva = iva;
         }
-
-        public Prodotto(string nome, string descrizione, double prezzo, int iva)
+       
+       /* public Prodotto(string nome, string descrizione, double prezzo, int iva)
         {
 
             this.nome = nome;
             this.descrizione = descrizione;
             this.prezzo = prezzo;
             this.iva = iva;
-        }
+        }*/
 
         // GETTERS
 
