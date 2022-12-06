@@ -16,13 +16,18 @@ Console.WriteLine("Hello, World!");
 try
 {
     Bevanda Levissima = new Bevanda("Levissima", "Bormio", -6, 1500, true, 0.88, 22);
+    Levissima.StampaProdotto();
 }
 catch (PhNonEsiste e)
 {
     Console.WriteLine(e.Message);
 
 }
- 
+
+
+
+
+
 
 string[] frutta = { "mela", "pera", "banana" };
 

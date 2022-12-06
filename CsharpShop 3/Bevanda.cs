@@ -17,7 +17,7 @@ namespace CsharpShop_3
         public Bevanda(string nome, string sorgente, double ph, int capacitaMassimalitri, bool naturale, double prezzo, int iva) : base(nome, prezzo, iva)
         {
            if (ph <0 && ph>14) {
-                throw new PhNonEsiste("Ph non essiste nella cattegoria concessa");
+                throw new PhNonEsiste("Ph inserito è al di fuore della scala consentita");
             }
 
             this.sorgente = sorgente;
