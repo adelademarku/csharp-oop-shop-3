@@ -80,7 +80,7 @@ catch (BevandaMassimoException e)
 }
 
 
-
+Console.WriteLine("il valore in gallone è: " + ConvertitoreDiLitri.DalitriAGallone(5));
 
 
 

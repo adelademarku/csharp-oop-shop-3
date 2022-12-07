@@ -8,16 +8,16 @@ namespace CsharpShop_3
 {
     public static class ConvertitoreDiLitri
     {
-        public static double DaCelsiusAFahrenheit(string liquidoLitri)
+        public static double DalitriAGallone(double liquidoLitri)
         {
-            double litri = double.Parse(liquidoLitri);
-            double gallone = litri / 4.54609 ;
+            double litri = liquidoLitri;
+            double gallone = litri * 4.54609 ;
             return gallone;
         }
-        public static double DaFahrenheitACelsius(string liquidoGalloni)
+        public static double DaGalloneALitro(double liquidoGalloni)
         {
-            double gallone = double.Parse(liquidoGalloni);
-            double litri = gallone * 4.54609;
+            double gallone = liquidoGalloni;
+            double litri = gallone / 4.54609;
             return litri;
         }
     }
